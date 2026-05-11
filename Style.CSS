@@ -37,10 +37,35 @@ margin-bottom: 15px;
     border-radius: 20px;
     display: flex;
     width: 80%; }
-.search-container input { border: none; background: transparent; margin-left: 10px; outline: none; }
+.search-container input {
+     border: none;
+      background: transparent; 
+      margin-left: 10px;
+       outline: none;
+     }
 
-.promo-card { background: #1a1a1a; color: white; border-radius: 25px; padding: 25px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-.tag { color: #ffc107; font-size: 12px; font-weight: bold; }
+/* --- ACTUALIZACIÓN DEL LOGO EN PROMO-CARD --- */
+.promo-card { 
+    background: #1a1a1a; 
+    color: white; 
+    border-radius: 25px; 
+    padding: 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 30px; 
+    overflow: hidden; /* Evita que algo se salga de la tarjeta */
+}
+
+.promo-card img {
+    width: 120px;      /* Tamaño ideal para que no choque con el texto */
+    height: 130px;
+    object-fit: cover; /* Para que la imagen no se vea aplastada */
+    border-radius: 60%; /* Hace el logo circular y quita el fondo blanco cuadrado */
+    border: 5px solid #ffc107; /* Borde amarillo como el de tus productos */
+    background-color: white;  /* Mantiene el fondo blanco solo dentro del círculo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Le da profundidad */
+}
 
 .grid-menu {
     display: grid;
@@ -298,4 +323,101 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     margin-top: 10px;
     font-size: 14px;
 }
+
+/* Probando estilo para la parte de personalizar*/
+
+/* Contenedor de cada grupo (Tamaño, Extras, etc.) */
+.option-group {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.option-group h3 {
+    color: #ffc107; /* El amarillo de Rancho la Mimi */
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-left: 4px solid #ffc107;
+    padding-left: 10px;
+}
+
+/* Lista de opciones */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Cada tarjeta de opción (el "botón" entero) */
+.option-item {
+    background: #252525; /* Fondo oscuro para resaltar */
+    padding: 18px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Texto a la izquierda, círculo a la derecha */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Efecto cuando pasas el mouse o seleccionas */
+.option-item:hover {
+    background: #333;
+    border-color: #444;
+}
+
+/* Estilo para los inputs (círculos y cuadros) */
+.option-item input[type="radio"], 
+.option-item input[type="checkbox"] {
+    accent-color: #ffc107; /* CambiaR el color del check al amarillo del logo */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Texto dentro de la opción */
+.option-item span {
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Área de notas especiales 
+.custom-note {
+    width: 100%;
+    height: 120px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}*/
+
+.custom-note:focus {
+    border-color: #ffc107;
+}
+
+/* Ajuste para el botón de confirmar */
+.btn-yellow {
+    background: #ffc107;
+    color: #000;
+    padding: 18px;
+    border-radius: 50px; /* Bordes muy redondeados */
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
 

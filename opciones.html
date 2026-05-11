@@ -4,43 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.CSS">
-    <title>Opciones-Hamburguesa</title>
+    <title>Personalizar Pedido - Rancho la Mimi</title>
 </head>
-<body class="options-page">
+<body class="detail-page">
     <header class="header-app">
-        <div class="small-product-info">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=50" alt="mini">
-            <div>
-                <h3>Hamburguesa Grande</h3>
-                <p>$ 150</p>
-            </div>
-        </div>
+        <a href="" class="">⬅ Volver</a>
     </header>
 
-    <main class="container">
-        <section class="ingredients-list">
-            <div class="ingredient-item">
-                <img src="https://via.placeholder.com/40" alt="bun">
-                <div class="ing-text">
-                    <p>Hamburguesa Pequeña </p>
-                    <small>50 Cal</small>
-                </div>
-                <input type="checkbox" checked>
-            </div>
+    <main class="container centered">
+        <h1 class="category-title">Personaliza tu orden</h1>
 
-            <div class="ingredient-item">
-                <img src="https://th.bing.com/th/id/R.2f083fe0644f8fb87a36d6c8d9c03320?rik=bQLNQCn6lQCvBQ&pid=ImgRaw&r=0" alt="beef">
-                <div class="ing-text">
-                    <p>100% Hamburguesa de carne</p>
-                    <small>250 Cal</small>
-                </div>
-                <div class="qty-control-ing">
-                    <button>-</button> <span>1</span> <button>+</button>
-                </div>
+        <section class="option-group">
+            <h3>Escoge el tamaño</h3>
+            <div class="options-list">
+                <label class="option-item">
+                    <input type="radio" name="size" checked>
+                    <span>Pequeño</span>
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="size">
+                    <span>Mediano</span>
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="size">
+                    <span>Grande </span>
+                </label>
             </div>
         </section>
 
-        <a href="detalle.html" class="btn-yellow sticky-bottom">Aplicar cambios</a>
+        <section class="option-group">
+            <h3>¿Deseas agregar extras?</h3>
+            <div class="options-list">
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span>Queso extra</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span>Tocineta</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span>Salsa especial</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="option-group">
+            <h3>Notas adicionales</h3>
+            <textarea placeholder="Ej: Sin cebolla, bien tostado..." class="custom-note"></textarea>
+        </section>
+
+        <div class="detail-actions">
+            <a href="carrito.html" class="btn-yellow">Confirmar y Agregar</a>
+        </div>
     </main>
 </body>
 </html>
