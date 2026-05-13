@@ -14,7 +14,9 @@ background-color: #000;
 color: white;
 }
 .container { 
-    padding: 20px;
+    width: 100%;       /* Asegura que ocupe todo el ancho disponible */
+    padding: 0;        /* Quitamos el espacio de los lados del contenedor principal */
+    margin: 0;
 }
 .product-link {
     text-decoration: none; 
@@ -25,36 +27,52 @@ color: white;
 margin-bottom: 15px; 
 }
 
-/* --- PANTALLA INICIO --- */
+/* --- PANTALLA INICIO CORREGIDA --- */
 .header-app {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 20px; }
+    justify-content: flex-end; /* Manda el icono a la derecha */
+    width: 100%;
+    padding: 0; 
+}
+
 .search-container {
     background: #f1f1f1;
-    padding: 10px 15px; 
-    border-radius: 20px;
+    padding: 12px 15px; 
+    border-radius: 50px; 
     display: flex;
-    width: 80%; }
-.search-container input {
-     border: none;
-      background: transparent; 
-      margin-left: 10px;
-       outline: none;
-     }
+    align-items: center;
+    width: 100%;         /* esto lo hace largo */
+    margin-top: -15px;   /* Sube el buscador para pegarlo a la tarjeta negra */
+    margin-bottom: 10px; /* Espacio pequeño con lo que sigue */
+    box-sizing: border-box;
 
+}
+
+.search-container input {
+    border: none;
+    background: transparent; 
+    margin-left: 10px;
+    outline: none;
+    width: 100%;        /* El texto también usa todo el ancho */
+    font-size: 16px;
+}
 /* --- ACTUALIZACIÓN DEL LOGO EN PROMO-CARD --- */
 .promo-card { 
     background: #1a1a1a; 
     color: white; 
-    border-radius: 25px; 
-    padding: 30px; 
+    /* Cambiamos esto para que pegue a los bordes */
+    width: 100%; 
+    margin: 0; 
+    padding: 30px 20px; /* Espacio interno para que el texto no pegue al borde */
+    
+    /* Curva solo en las esquinas de abajo */
+    border-radius: 5px; 
+    
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-between;     
     align-items: center; 
-    margin-bottom: 30px; 
-    overflow: hidden; /* Evita que algo se salga de la tarjeta */
+    margin-bottom: 25px; /* Espacio para que el buscador no quede pegado */
+    overflow: hidden;
 }
 
 .promo-card img {
@@ -85,9 +103,9 @@ margin-bottom: 15px;
 }   
 .food-item img {
     width: 100%;
-    height: 200px; /* Subimos de 150px a 200px para que se vea más */
+    height: 200px; /* Subimos de 150px a 200px para que se observe mas*/
     object-fit: cover; /* Mantiene la proporción sin estirar */
-    object-position: center; /* Centra la foto para que no se vea solo el pan */
+    object-position: center; /* Centra la foto */
     border-radius: 15px;
     display: block;
 }
@@ -325,7 +343,6 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 /* Probando estilo para la parte de personalizar*/
-
 /* Contenedor de cada grupo (Tamaño, Extras, etc.) */
 .option-group {
     width: 100%;
@@ -372,7 +389,7 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 /* Estilo para los inputs (círculos y cuadros) */
 .option-item input[type="radio"], 
 .option-item input[type="checkbox"] {
-    accent-color: #ffc107; /* CambiaR el color del check al amarillo del logo */
+    accent-color: #ffc107; /* Cambiar el color del check al amarillo del logo */
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -385,24 +402,8 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     font-weight: 500;
 }
 
-/* Área de notas especiales 
-.custom-note {
-    width: 100%;
-    height: 120px;
-    background: #1a1a1a;
-    border: 2px solid #333;
-    border-radius: 15px;
-    color: white;
-    padding: 15px;
-    font-family: inherit;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s;
-}*/
 
-.custom-note:focus {
-    border-color: #ffc107;
-}
+
 
 /* Ajuste para el botón de confirmar */
 .btn-yellow {
@@ -420,4 +421,49 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
 
+/* --- ESTILO PARA EL BOTÓN ATRÁS --- */
+.header-back {
+    display: flex !important;
+    justify-content: flex-start !important; /* Fuerza la izquierda */
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+    background: transparent;
+}
 
+.back-btn {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #f1f1f1; /* Un fondito gris suave para que parezca botón */
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Esto pone el cuadro negro con letras blancas */
+.option-group .custom-note {
+    background-color: #1a1a1a ; /* Fondo negro */
+    color: #ffffff ;           /* las lestra blancas*/
+    border: 1px solid #333;   /* Borde sutil */
+    border-radius: 15px ;      /* Bordes redondeados */
+    width: 100% ;
+    height: 120px ;
+    padding: 15px;
+    font-size: 1rem;
+    outline: none ;
+    resize: none;
+    display: block ;
+    margin-top: 10px ;
+}
+
+/* Para que el texto de ejemplo (placeholder) también se vea claro */
+.option-group .custom-note::placeholder {
+    color: #888 ; /* Gris clarito */
+}
+
+/* Cuando el cliente está escribiendo */
+.option-group .custom-note:focus {
+    border-color: #ffc107 ; /* El borde brilla en amarillo al tocarlo */
+}
