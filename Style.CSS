@@ -66,7 +66,7 @@ margin-bottom: 15px;
     padding: 30px 20px; /* Espacio interno para que el texto no pegue al borde */
     
     /* Curva solo en las esquinas de abajo */
-    border-radius: 5px; 
+    border-radius: 0; 
     
     display: flex; 
     justify-content: space-between;     
@@ -80,7 +80,7 @@ margin-bottom: 15px;
     height: 130px;
     object-fit: cover; /* Para que la imagen no se vea aplastada */
     border-radius: 60%; /* Hace el logo circular y quita el fondo blanco cuadrado */
-    border: 5px solid #ffc107; /* Borde amarillo como el de tus productos */
+    border: 5px solid #ffc107; /* Borde amarillo como el de los productos */
     background-color: white;  /* Mantiene el fondo blanco solo dentro del círculo */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Le da profundidad */
 }
@@ -466,4 +466,34 @@ box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 /* Cuando el cliente está escribiendo */
 .option-group .custom-note:focus {
     border-color: #ffc107 ; /* El borde brilla en amarillo al tocarlo */
+}
+
+/* --- Adaptacion para compu (Pantallas grandes) --- */
+@media (min-width: 1024px) {
+    
+    /* El contenedor principal ya no ocupa el 100%, le damos un máximo para que no se estire infinito */
+    .container {
+        max-width: 1200px; /* donde defnimos el ancho ponemos un limite */
+        margin: 0 auto; /* Lo centra en la pantalla */
+    }
+
+    /* El catálogo pasa de 2 columnas a 4 columnas */
+    .grid-menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        gap: 25px; /* Más espacio entre platos */
+    }
+
+    /* Ajustamos el tamaño de las tarjetas para que no se vean tan largas */
+    .food-item {
+        min-height: auto;
+    }
+
+    /* La barra de navegación inferior ya no es necesaria en PC, 
+       pero para no romper tu flujo, podemos centrarla */
+    .bottom-nav {
+        max-width: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 30px 30px 0 0;
+    }
 }
